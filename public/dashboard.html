@@ -12,14 +12,14 @@
     <div id="map" role="application" aria-label="Carte des véhicules"></div>
     <aside id="sheet" class="float sheet">
       <button id="handle" class="sheet__handle" type="button" aria-label="Agrandir ou réduire la liste"></button>
-      <header class="sheet__head">
-     
-        <label class="search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
-          <input id="search" type="search" placeholder="Rechercher un véhicule" autocomplete="off">
-        </label>
-        <p id="summary">Aucun véhicule</p>
-      </header>
+<header class="sheet__head">
+  <p id="connBadge" class="badge" data-state="off" hidden>Connexion…</p>
+  <label class="search">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+    <input id="search" type="search" placeholder="Rechercher un véhicule" autocomplete="off">
+  </label>
+  <p id="summary">Aucun véhicule</p>
+</header>
       <ul id="list" class="fleet"></ul>
       <p id="empty" class="empty">Aucun véhicule connecté. Ouvrez la page <a href="/driver.html">Conducteur</a> sur un smartphone pour en ajouter un.</p>
     </aside>
