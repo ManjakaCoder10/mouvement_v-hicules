@@ -32,7 +32,7 @@ const dashboards = io.of('/dashboard');
 const passengers = io.of('/passenger');
 
 // Vue publique : uniquement ce qu'un passager a besoin de voir (pas de vitesse ni de précision).
-const toPassenger = (v) => ({ vehicleId: v.vehicleId, lat: v.lat, lng: v.lng, heading: v.heading, timestamp: v.timestamp });
+const toPassenger = (v) => ({ vehicleId: v.vehicleId, lat: v.lat, lng: v.lng, heading: v.heading, timestamp: v.timestamp, online: true, ageMs: v.ageMs });
 
 function createLimiter(maxPerSecond) {
   let windowStart = Date.now();
