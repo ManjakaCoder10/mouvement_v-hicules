@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1c1c1e">
+  <title>Conducteur – Suivi de véhicules</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="driver">
+    <header class="driver__bar">
+      <h1>Suivi de trajet</h1>
+      <p id="connBadge" class="badge" data-state="off">Hors ligne</p>
+    </header>
+
+    <section id="setup" class="card">
+      <div class="hero" aria-hidden="true"><svg viewBox="0 0 44 44"><rect x="13" y="5" width="18" height="34" rx="8" fill="currentColor"/><path d="M16.5 16h11l-1.5-6h-8z" fill="var(--panel)"/><rect x="16" y="29" width="12" height="5" rx="2" fill="var(--panel)" opacity=".7"/></svg></div>
+      <label for="vehicleId">Identifiant du véhicule</label>
+      <input id="vehicleId" type="text" maxlength="32" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ex. CAMION-12">
+      <button id="startBtn" class="btn btn--primary btn--block" type="button">Démarrer le suivi</button>
+    </section>
+
+    <section id="live" class="card" hidden>
+      <div class="speedo" aria-live="off"><span id="speed" class="speed__value">0</span><span class="speed__unit">km/h</span></div>
+      <dl class="facts">
+        <dt>Véhicule</dt><dd id="vid">—</dd>
+        <dt>Signal GPS</dt><dd id="gps">En attente…</dd>
+        <dt>Précision</dt><dd id="acc">—</dd>
+        <dt>Dernier envoi</dt><dd id="sent">—</dd>
+        <dt>Écran maintenu allumé</dt><dd id="wake">—</dd>
+        <dt>Positions en attente</dt><dd id="queued">0</dd>
+      </dl>
+      <button id="stopBtn" class="btn btn--danger btn--block" type="button">Arrêter le suivi</button>
+    </section>
+
+    <div id="alert" class="alert" role="alert" hidden></div>
+
+    <section class="card tips">
+      <h2>Pour un suivi sans coupure</h2>
+      <ul>
+        <li>Laissez cet écran allumé et cet onglet au premier plan.</li>
+        <li>Ne changez pas d'application et ne verrouillez pas le téléphone.</li>
+        <li>Branchez le téléphone au chargeur du véhicule.</li>
+        <li>Désactivez l'économiseur de batterie pour votre navigateur.</li>
+        <li>Autorisez la localisation précise quand le navigateur le demande.</li>
+      </ul>
+      <p>Les navigateurs mobiles suspendent la géolocalisation d'une page masquée : c'est pourquoi l'écran doit rester visible.</p>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/driver.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Superviseur – Suivi de véhicules</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="mapview">
+    <div id="map" role="application" aria-label="Carte des véhicules"></div>
+    <aside id="sheet" class="float sheet">
+      <button id="handle" class="sheet__handle" type="button" aria-label="Agrandir ou réduire la liste"></button>
+      <header class="sheet__head">
+        <div class="sheet__title"><h1>Flotte</h1><p id="connBadge" class="badge" data-state="off">Connexion…</p></div>
+        <label class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+          <input id="search" type="search" placeholder="Rechercher un véhicule" autocomplete="off">
+        </label>
+        <p id="summary">Aucun véhicule</p>
+      </header>
+      <ul id="list" class="fleet"></ul>
+      <p id="empty" class="empty">Aucun véhicule connecté. Ouvrez la page <a href="/driver.html">Conducteur</a> sur un smartphone pour en ajouter un.</p>
+    </aside>
+    <div class="fabs">
+      <button id="meBtn" class="fab" type="button" aria-label="Ma position"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm8.9 3A9 9 0 0 0 13 3.1V1h-2v2.1A9 9 0 0 0 3.1 11H1v2h2.1A9 9 0 0 0 11 20.9V23h2v-2.1a9 9 0 0 0 7.9-7.9H23v-2h-2.1zM12 19a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg></button>
+      <button id="fitBtn" class="fab" type="button" aria-label="Tout afficher sur la carte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5v4h2V5h4V3H5a2 2 0 0 0-2 2zm2 10H3v4a2 2 0 0 0 2 2h4v-2H5v-4zm14 4h-4v2h4a2 2 0 0 0 2-2v-4h-2v4zm0-16h-4v2h4v4h2V5a2 2 0 0 0-2-2z"/></svg></button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/map-common.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
